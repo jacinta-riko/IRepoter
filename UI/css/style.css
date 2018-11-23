@@ -1,0 +1,202 @@
+.login-page {
+    width: 360px;
+    padding: 10% 0 0;
+    margin: auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: rgba(7, 40, 195, 0.8);
+    max-width: 360px;
+    margin: 0 auto 108px;
+    padding: 45px;
+    text-align: center;
+}
+button {
+    background-color: red;
+}
+.container{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 80%;
+    width: 1200px;
+    background-color: blue;
+    text-align: center;
+}
+img {
+    width:150px;
+    height: 150px;
+}
+table {
+    width: 100%;
+}
+table, tr, th, td {
+    border: 1px solid black;
+}
+.form input{
+    font-family: Arial, Helvetica, sans-serif;
+    outline: 1;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form button{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4cac4c;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color:#ffffff;
+    font-size: 14px;
+    cursor: pointer;
+
+
+}
+
+.form button:hover,.form button:active{
+    background: #43a047;
+}
+
+.form .message{
+    margin: 15px 0 0;
+    color: aliceblue;
+    font-size: 12px;
+}
+
+.form .message a{
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.form .register-form{
+    display: none;
+}
+
+body{
+    margin: 0;
+    padding: o;
+    /*background-image: url(stop-corruption-sign-on-white-.jpg);*/
+    background-size: cover;
+}
+/*This is the list,menu styling*/
+* {
+    margin:0;
+    padding: 0; 
+}
+
+li{
+    list-style-type: none; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.header my-menu {
+    background: url("stpcorruption.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+.nav-area nav-1{
+    float: left;
+    list-style: none;
+    margin-top: 30px;
+
+}
+
+.nav-area li {
+    display: inline-block;
+}
+
+.nav-area li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.nav-area li a:hover{
+    background: #fff;
+    color: black;
+}
+
+.ireporter-text{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 20% 30%;
+    text-align: centre;
+}
+.ireporter-text h2{
+    text-align: center;
+    color: black;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.ireporter-text a{
+    border: 1px solid black;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: black;
+}
+
+.ireporter-text a:hover{
+    background: #fff;
+    color: #333;
+}
+
+.sidemenu {
+    background: purple;
+    max-width: 200px;
+}
+
+nav a {
+    display: block;
+    color: grey;
+    text-decoration: none;
+    padding: 15px 30px;
+}
+
+nav{
+    padding-top: 100px;
+}
+
+.a{
+    display:block;
+    color: grey;
+    text-decoration: none;
+    padding: 15px 30px;
+}
+
+.active {
+    background: purple;
+    border-right: 5px solid green;
+    padding: 15px 15px 25px;
+
+}
+
+.fa{
+    color: blue;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+    display: inline-block;
+    width: 30px;
+}
