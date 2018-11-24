@@ -6,14 +6,19 @@
 .form {
     position: relative;
     z-index: 1;
-    background: rgba(7, 40, 195, 0.8);
+    background: rgba(7, 40, 195, 0.8);  
     max-width: 360px;
     margin: 0 auto 108px;
     padding: 45px;
     text-align: center;
 }
-button {
+btn {
     background-color: red;
+}
+
+dropbtn {
+    position: relative;
+    position: absolute;
 }
 .container{
     position: absolute;
@@ -27,16 +32,16 @@ button {
     background-color: blue;
     text-align: center;
 }
+
+h1 index-head{
+    text-align: center;
+    padding: 100%;
+}
 img {
     width:150px;
     height: 150px;
 }
-table {
-    width: 100%;
-}
-table, tr, th, td {
-    border: 1px solid black;
-}
+
 .form input{
     font-family: Arial, Helvetica, sans-serif;
     outline: 1;
@@ -85,8 +90,8 @@ table, tr, th, td {
 body{
     margin: 0;
     padding: o;
-    /*background-image: url(stop-corruption-sign-on-white-.jpg);*/
-    background-size: cover;
+    background:#444;
+    
 }
 /*This is the list,menu styling*/
 * {
@@ -102,36 +107,8 @@ a{
     text-decoration: none;
     color: black;
 }
-.header my-menu {
-    background: url("stpcorruption.jpg");
-    height: 100vh;
-    background-size: cover;
-    background-position: center center;
-}
 
-.nav-area nav-1{
-    float: left;
-    list-style: none;
-    margin-top: 30px;
-
-}
-
-.nav-area li {
-    display: inline-block;
-}
-
-.nav-area li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-}
-
-.nav-area li a:hover{
-    background: #fff;
-    color: black;
-}
+    
 
 .ireporter-text{
     position: absolute;
@@ -193,10 +170,20 @@ nav{
 
 }
 
-.fa{
+/* .fa{
     color: blue;
     font-size: 1.4rem;
     margin-right: 0.8rem;
     display: inline-block;
     width: 30px;
 }
+ */
+
+ table, th, td{
+     border: 1px solid balck;
+     border-collapse: collapse;
+
+ }
+ td, th{
+     padding: 15px;
+ }
