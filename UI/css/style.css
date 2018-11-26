@@ -4,16 +4,13 @@
     margin: auto;
 }
 .form {
-    position: relative;
-    z-index: 1;
-    background: rgba(7, 40, 195, 0.8);  
-    max-width: 360px;
-    margin: 0 auto 108px;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 45px;
     text-align: center;
 }
-btn {
-    background-color: red;
+.btn {
+    background-color: green;
 }
 
 .container{
@@ -25,7 +22,7 @@ btn {
     right: 0;
     height: 80%;
     width: 1200px;
-    background-color: blue;
+    background-color: rgba(255, 0, 234, 0.137);
     text-align: center;
 }
 
@@ -171,7 +168,7 @@ nav{
  */
 
  table, th, td{
-     border: 1px solid balck;
+     border: 1px solid black;
      border-collapse: collapse;
 
  }
