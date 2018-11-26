@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iReporter</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <h2>ADMIN SIGN UP</h2>
+ <div class="admin-login-page">
+ <div class="form">
+    <form class="register-form">
+    <input type="text" placeholder="First Name"/>
+    <input type="text" placeholder="Last Name"/>
+    <input type="text" placeholder="Phone Number"/>
+    <input type="date" placeholder="Date of Birth"/>
+    <input type="text" placeholder="email address"/>
+    <input type="text" placeholder="username"/>
+    <input type="text" placeholder="password"/>
+    <input type="text" placeholder="confirm password"/>
+    <button>Sign Up</button>
+    <p class="message-login">Registered?<a href="#">Login as Admin</a>
+    </p>
+     </form>
+
+     <form class="login form">
+         <input type="text" placeholder="username"/>
+         <input type="password" placeholder="password"/>
+         <button btn>Login</button>
+         <p class="message">Not registered? <a href="#">Register</a></p>
+
+     </form>
+
+ </div>
+ </div> 
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+ 
+ </script>
+ <script>
+ $(".message a").click(function(){
+     $('form').animate({height:"toggle", opacity: "toggle"}, "slow");
+ });
+ </script>
+ 
+</body>
+</html>
