@@ -1,0 +1,123 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>My Profile</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div>
+        <h2>My Profile</h2>
+        <p>User Name: Jacinta Riko</p>
+        <p>Nationality: Kenyan</p>
+        <p>Date of Birth</p>
+    </div>
+     <br>
+        <br>
+        <br>
+    <table style="width:100%">
+        <caption>My Red Flags Records</caption>
+        <tr>
+            <th>User Name</th>
+            <th>Title</th>
+            <th>Date Created</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Jacinta Riko</td>
+            <td>Road Bribery</td>
+            <td>13-8-2018</td>
+            <td>
+                <button type="button-delete">Delete</button>
+                <button type="button-edit">Edit</button>
+            </td>
+        </tr>
+        <tr>
+                <td>Jacinta Riko</td>
+                <td>Road Bribery</td>
+                <td>13-8-2018</td>
+                <td>
+                    <button type="button-delete">Delete</button>
+                    <button type="button-edit">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                    <td>Jacinta Riko</td>
+                    <td>Road Bribery</td>
+                    <td>13-8-2018</td>
+                    <td>
+                        <button type="button-delete">Delete</button>
+                        <button type="button-edit">Edit</button>
+                    </td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" align="center"><button class="button-create-record">Create Record</button></td>
+                    </tr>
+                </tfoot>
+       
+
+    </table style="width:100%">
+    <br>
+    <br>
+    <br>
+        <caption>My Interventions Records</caption>
+    <table>
+        <tr>
+            <th>User Name</th>
+            <th>Title</th>
+            <th>Date Created</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Jacinta Riko</td>
+            <td>Road Bribery</td>
+            <td>13-8-2018</td>
+            <td>
+                <button type="button-delete">Delete</button>
+                <button type="button-edit">Edit</button>
+            </td>
+        </tr>
+        <tr>
+                <td>Jacinta Riko</td>
+                <td>Road Bribery</td>
+                <td>13-8-2018</td>
+                <td>
+                    <button type="button-delete">Delete</button>
+                    <button type="button-edit">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                    <td>Jacinta Riko</td>
+                    <td>Road Bribery</td>
+                    <td>13-8-2018</td>
+                    <td>
+                        <button type="button-delete" >Delete</button>
+                        <button type="button-edit">Edit</button>
+                    </td>
+                </tr>
+                <tfoot>
+                        <tr>
+                            <td colspan="4" align="center"><button class="button-create-record">Create Record</button></td>
+                        </tr>
+                </tfoot>
+
+    </table>
+
+<button onclick="myFunction()"></button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var person = prompt("Please enter your name", "Harry Potter");
+    if (person != null) {
+        document.getElementById("demo").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+}
+</script>
+    
+   
+</body>
+</html>
