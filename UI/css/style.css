@@ -4,22 +4,15 @@
     margin: auto;
 }
 .form {
-    position: relative;
-    z-index: 1;
-    background: rgba(7, 40, 195, 0.8);  
-    max-width: 360px;
-    margin: 0 auto 108px;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 45px;
     text-align: center;
 }
-btn {
-    background-color: red;
+.btn {
+    background-color: green;
 }
 
-dropbtn {
-    position: relative;
-    position: absolute;
-}
 .container{
     position: absolute;
     margin: auto;
@@ -29,7 +22,7 @@ dropbtn {
     right: 0;
     height: 80%;
     width: 1200px;
-    background-color: blue;
+    background-color: rgba(255, 0, 234, 0.137);
     text-align: center;
 }
 
@@ -89,8 +82,8 @@ img {
 
 body{
     margin: 0;
-    padding: o;
-    background:#444;
+    padding: 0;
+    background:grey;
     
 }
 /*This is the list,menu styling*/
@@ -140,11 +133,6 @@ a{
     color: #333;
 }
 
-.sidemenu {
-    background: purple;
-    max-width: 200px;
-}
-
 nav a {
     display: block;
     color: grey;
@@ -163,9 +151,9 @@ nav{
     padding: 15px 30px;
 }
 
-.active {
-    background: purple;
-    border-right: 5px solid green;
+.topnav{
+    background:none; 
+    border-right: 5px solid;
     padding: 15px 15px 25px;
 
 }
@@ -180,10 +168,25 @@ nav{
  */
 
  table, th, td{
-     border: 1px solid balck;
+     border: 1px solid black;
      border-collapse: collapse;
 
  }
  td, th{
      padding: 15px;
+ }
+
+ .page content{
+     text-align: center;
+     padding: 35px;
+
+ }
+
+ .landing-page{
+     padding: 100px;
+     margin: 35px;
+ }
+
+ h1 index-title{
+     text-align: center;
  }
