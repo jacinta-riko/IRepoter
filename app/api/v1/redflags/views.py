@@ -18,5 +18,30 @@ class RedFlags(Resource):
             "data" : self.db
             }), 200) 
 
+    def post(self):
+
+        data = {
+            'id' : self.id,
+            'createdOn' : datetime.datetime.utcnow(),
+            'createdBy' : request.json['createdBy'],
+            'type' : 'red-flags',
+            'location' : request.json['location'],
+            'status' : "Under Investigation",
+            'images' : request.json['images'],
+            'videos' : request.json['videos'],
+            'title' : request.json['title'],
+            'comment' : request.json['comment']
+            }
+
+            self.db.append(data)success_message = {
+                'id' : self.id,
+                'message' : 'Thank you for creating a Red-Flag'
+                }
+
+            return make_response(jsonify({
+                "status" : 201,
+                "data" : success_message
+                }), 201)
+
     
 
