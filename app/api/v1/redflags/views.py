@@ -76,5 +76,35 @@ class RedFlag(Resource):
                         }), 204)
 
 
+     def put(self, redflag_id):
+
+        for incident in incidents:
+             if incident['id'] == redflag_id: 
+                incident['createdOn'] = request.json.get('createdOn', incident['createdOn'])
+                incident['createdBy'] = request.json.get('createdBy', incident['createdBy'])
+                incident['type'] = request.json.get('type', incident['type'])
+                incident['location'] = request.json.get ('location', incident['location']) 
+                incident['status'] = request.json.get('status', incident['status'])
+                incident['images'] = request.json.get('images', incident['images'])
+                incident['videos'] = request.json.get('videos', incodent['videos'])
+                incident['title'] = request.json.get('title', incident['title'])
+                incident['comment'] = request.json.get('comment', incident['comment'])
+
+                    success_message = {
+                        "id" : redflag_id,
+                        "message" : "User record has been successfully updated"
+                        }
+
+                        return make_response(jsonify({
+                            "status" : 201,
+                            "data" : success_message
+                        }), 201)
+
+                        return make_response(jsonify({
+                            "status" : 404,
+                            "error" : "User record does not exist"
+                        }), 404)
+
+
     
 
