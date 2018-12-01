@@ -1,14 +1,11 @@
-from flask import Flask
-from flask_restful import Resource, Api 
+from flask import Flask , Blueprint
+# from flask_restful import Resource, Api 
 # from flask_restful import Api, Resource
-
-#local imports
-from .api.v1.redflags.views import RedFlags, RedFlag
+# from .api.v1 import version1 as v1
+from .api.v1 import version1 as v1
 
 def create_app():
     app = Flask(__name__)
-    api = Api(app)
-    # The add_resource function registers the routes with the framework using the given endpoint
-    api.add_resource(RedFlags, '/api/v1/red-flags')  #for the list of redflags
-    api.add_resource(RedFlag, '/api/v1/red-flags/<int:redflag_id>') #for an individual red-flag
+    # api = Api(app)
+    app.register_blueprint(v1)
     return app 

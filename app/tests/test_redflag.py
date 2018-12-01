@@ -3,21 +3,21 @@ import json
 from app import create_app
 
 
-class User_Test_Case_For_Redflags(unittest.TestCase):
+class RedFlagsTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app()
         self.client = self.app.test_client()
         self.data = {
             "id": 1,
-            "createdOn" : "30.12.2018",
-            "createdBy" : "Mutheu Nzuma",
-            'type' : 'red-flag',
-            "location" : "Kaloleni",
-            "status" : "Under investigation",
+            "createdOn" : "Tue, 27 Nov 2018 21:18:13 GMT",
+            "createdBy" : "Admin",
+            'type' : 'red-flags',
+            "location" : "Nakuru",
+            "status" : "draft",
             "images" : "",
             "videos" : "",
-            "title" : "Michuki seatbelts",
-            "comment" : "Police asked for money to pass the crime"
+            "title" : "Mercury in sugar",
+            "comment" : "Lorem ipsum dolor sit amet."
         }
 
     def test_get_all_redflags(self):
