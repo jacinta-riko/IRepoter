@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from flask import jsonify, make_response, request
-from .models import RedFlagModel
+from .models import RedFlagModule
 import datetime
 
 
@@ -8,7 +8,7 @@ class RedFlags(Resource):
     """docstring for RedFlags"""
     
     def __init__(self):
-        self.db = RedFlagModel()
+        self.db = RedFlagModule()
 
     def post(self):
         
@@ -17,7 +17,7 @@ class RedFlags(Resource):
             'createdBy' : request.json.get('createdBy', ""),
             'type' : 'red-flags',
             'location' : request.json.get('location', ""),
-            'status' : "Under Invsetigation",
+            'status' : "Under Investigation",
             'images' : request.json.get('images', ""),
             'videos' : request.json.get('videos', ""),
             'title' : request.json['title'],
@@ -40,3 +40,6 @@ class RedFlags(Resource):
             "status" : 200,
             "data" : self.db.get_all()
         }), 200) 
+
+
+   
