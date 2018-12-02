@@ -1,47 +1,37 @@
 from flask_restful import Resource
-from flask import jsonify, make_response, request, abort 
-
+from flask import jsonify, make_response, request
+from .models import RedFlagModule
 import datetime
 
-incidents = []
 
 class RedFlags(Resource):
-"""RedFlags"""
+    """docstring for RedFlags"""
+    
     def __init__(self):
-        self.db = incidents
-        self.id = len(incidents) + 1
-
-    def get(self):
-
-        return make_response(jsonify({
-            "status" : 200,
-            "data" : self.db
-            }), 200) 
+        self.db = RedFlagModule()
 
     def post(self):
-
+        
         data = {
-            'id' : self.id,
             'createdOn' : datetime.datetime.utcnow(),
-            'createdBy' : request.json['createdBy'],
+            'createdBy' : request.json.get('createdBy', ""),
             'type' : 'red-flags',
-            'location' : request.json['location'],
+            'location' : request.json.get('location', ""),
             'status' : "Under Investigation",
-            'images' : request.json['images'],
-            'videos' : request.json['videos'],
+            'images' : request.json.get('images', ""),
+            'videos' : request.json.get('videos', ""),
             'title' : request.json['title'],
-            'comment' : request.json['comment']
-            }
+            'comment' : request.json.get('comment', "")
+        }
+        self.db.save(data)
+        
+        success_message = {
+            'message' : 'Created red-flag record'
+        }
 
-            self.db.append(data)success_message = {
-                'id' : self.id,
-                'message' : 'Thank you for creating a Red-Flag'
-                }
+        return make_response(jsonify({
+            "status" : 201,
+            "data" : success_message
+        }), 201)
 
-            return make_response(jsonify({
-                "status" : 201,
-                "data" : success_message
-                }), 201)
-
-    
-
+   
