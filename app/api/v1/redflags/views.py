@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from flask import jsonify, make_response, request
-from .models import RedFlagModel
+from .models import RedFlagModule
 import datetime
 
 
@@ -8,7 +8,7 @@ class RedFlags(Resource):
     """docstring for RedFlags"""
     
     def __init__(self):
-        self.db = RedFlagModel()
+        self.db = RedFlagModule()
 
     def post(self):
         
@@ -17,7 +17,7 @@ class RedFlags(Resource):
             'createdBy' : request.json.get('createdBy', ""),
             'type' : 'red-flags',
             'location' : request.json.get('location', ""),
-            'status' : "Under Invsetigation",
+            'status' : "Under Investigation",
             'images' : request.json.get('images', ""),
             'videos' : request.json.get('videos', ""),
             'title' : request.json['title'],
@@ -44,7 +44,7 @@ class RedFlags(Resource):
 class RedFlag(Resource):
     """docstring of RedFlag"""
     def __init__(self):
-        self.db = RedFlagModel()
+        self.db = RedFlagModule()
         
 
     def get(self, redflag_id):
@@ -54,12 +54,12 @@ class RedFlag(Resource):
                     "data" : incident
                 }), 200)
     
-    
+
     def delete(self, redflag_id):
         incident = self.db.find(redflag_id)
         self.db.delete(incident)
         success_message = {
-                'message' : 'red-flag record has been deleted'
+                'message' : 'Red-flag record has been sucessfully deleted'
                  }
         return make_response(jsonify({
                 "status" : 204,
@@ -77,7 +77,7 @@ class RedFlag(Resource):
                 incident['comment'] = request.json.get('comment', incident['comment'])
 
                 success_message = {
-                    "message" : "Red-flag has been updated"
+                    "message" : "Red-flag has been successflly updated"
                 }
 
                 return make_response(jsonify({
