@@ -1,14 +1,10 @@
 # Let travis know the language it needs to run
 language: python
-​
+
 # Mention the python version in which travis will run the app
 python:
  - "3.6"
-​
-# blocklist
-branches:
- except:
- - master
+
 # command to install dependencies in the requirements file
 # You can also install the coverage here to avoid it being in the requirements file
 # It is important to avoid things like coverage, pep8 that are not required to run the app
@@ -17,17 +13,15 @@ install:
  - pip install coverage
  - pip install pytest-cov
  - pip install coveralls
-​
+
 # command to run tests 
 # This is the script that enables travis to run the tests
 # There are many ways to do dependeing on how you want travis to run and get you coverage
-script: true
+script: 
  - pytest --cov=./app
  
  # Another command/method to run tests
-script: 
- - pytest
-​
+
 # This returns the coverage and let's coveralls know the coverage percent. 
 # Note that travis will build your system and get the coverage. 
 # It cannot display, therefore coveralls becomes important to get the coverage
@@ -35,6 +29,4 @@ script:
 after_success:
  - coveralls
  
-# Using codecov to get coverage
-after_success:
- - codecov
+
