@@ -28,5 +28,6 @@ script:
 # You can also use after_success
 after_success:
  - coveralls
+ - codecov -- token=2ePVEQj0kzEErftZ9FgKwLpfA4h1CWZmY
  
 
