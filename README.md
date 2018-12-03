@@ -4,4 +4,6 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 
 [![Build Status](https://travis-ci.com/jacinta-riko/IRepoter.svg?branch=ft-update-comment-location-162363557)](https://travis-ci.com/jacinta-riko/IRepoter)
 
+[![Coverage Status](https://coveralls.io/repos/github/jacinta-riko/IRepoter/badge.svg?branch=ft-update-comment-location-162363557)](https://coveralls.io/github/jacinta-riko/IRepoter?branch=ft-update-comment-location-162363557)
+
 
