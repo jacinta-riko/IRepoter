@@ -1,8 +1,47 @@
 """Docstring for models"""
 from flask import jsonify, make_response, request
 import datetime
+from flask_restful import reqparse
 
 incidents = []
+def validator(value):
+    if not value:
+        raise ValueError("Must not be empty string")
+parser = reqparse.RequestParser(bundle_errors=True)
+
+parser.add_argument('createdBy',
+                    type=validator,
+                    required=True,
+                    help='This field is required'
+                    )
+
+parser.add_argument('location',
+                    type=validator,
+                    required=True,
+                    help='This field is required'
+                    )
+
+parser.add_argument('images',
+                    action='append',
+                    help='This field is required'
+                    )
+
+parser.add_argument('videos',
+                    action='append',
+                    help='This field is required'
+                    )
+                    
+parser.add_argument('comment',
+                    type=validator,
+                    required=True,
+                    help='This field is required'
+                    )
+
+parser.add_argument('title',
+                    type=validator,
+                    required=True,
+                    help='This field is required'
+                    )
 
 class RedFlagModule():
     """Docstring for class RedFlagModule"""
@@ -16,6 +55,7 @@ class RedFlagModule():
 
     def save(self):
         """Method for saving redflag"""
+        args = parser.parse_args()
         data = {
             'id': self.id,
             'createdOn' : datetime.datetime.utcnow(),

@@ -81,7 +81,21 @@ class RedFlagsTestCase(unittest.TestCase):
         response = self.app.get("/api/v1/red-flags/10")
         result = json.loads(response.data)
         self.assertEqual(response.status_code, 200) 
-        self.assertIn("Red-flag does not exist",str(result))               
+        self.assertIn("Red-flag does not exist",str(result)) 
+
+    def test_wrong_location(self):
+        response = self.app.patch("/api/v1/red-flags/1/location", headers={'content-Type' : 'application/json'}, data=json.dumps({"locationsss" : "Nairobi"}))
+        result = json.loads(response.data)
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(result['data'], "Keyerror: location for the redflag not updated")
+
+    def test_wrong_comment(self):
+        response = self.app.patch("/api/v1/red-flags/1/comment", headers={'content-Type' : 'application/json'}, data=json.dumps({"commentsss" : "Nairobi"}))
+        result = json.loads(response.data)
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(result['data'], "Keyerror: comment for the redflag not updated")
+
+
 
 if __name__ == "__main__": 
     unittest.main()

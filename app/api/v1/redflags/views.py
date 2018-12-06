@@ -34,7 +34,7 @@ class RedFlags(Resource):
         }), 200)
 
 class RedFlag(Resource):
-    """docstring for RedFlag"""
+    # """docstring for RedFlag""" add descrptive message
     def __init__(self):
         self.db = RedFlagModule()
         

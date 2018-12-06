@@ -6,6 +6,7 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 
 [![Coverage Status](https://coveralls.io/repos/github/jacinta-riko/IRepoter/badge.svg?branch=ft-update-comment-location-162363557)](https://coveralls.io/github/jacinta-riko/IRepoter?branch=ft-update-comment-location-162363557)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/2dfe60023dea8cf10443/maintainability)](https://codeclimate.com/github/jacinta-riko/IRepoter/maintainability)
 
 ##Prerequisites
 Things yo need to run the appliaction;
