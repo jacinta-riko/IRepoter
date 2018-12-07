@@ -1,11 +1,10 @@
 from flask import Flask , Blueprint
-# from flask_restful import Resource, Api 
-# from flask_restful import Api, Resource
-# from .api.v1 import version1 as v1
+
 from .api.v1 import version1 as v1
 
 def create_app():
+    """This is the set up for the application"""
     app = Flask(__name__)
-    # api = Api(app)
+    app.url_map.strict_slashes = False
     app.register_blueprint(v1)
     return app 

@@ -12,14 +12,14 @@ class RedFlagsTestCase(unittest.TestCase):
         self.redflag = {
             "id": 1,
             "createdOn" : "Friday, 30 Dec 2018 22:10:33 GMT",
-            "createdBy" : "Admin",
-            'type' : 'red-flags',
-            "location" : "Kaloleni",
-            "status" : "Under investigation",
+            "createdBy" : 2,
+            "type" : "red-flags",
+            "location" : "85.0, 135.0",
+            "status" : "Resolved",
             "images" : "",
             "videos" : "",
             "title" : "Michuki seatbealts",
-            "comment" : "police wanted money to pass the offense"
+            "comment" : "Police wanted money to pass the offense"
         }
 
     def test_get_all_redflags(self):
@@ -59,7 +59,7 @@ class RedFlagsTestCase(unittest.TestCase):
         self.app.post("/api/v1/red-flags/1/location", headers={'Content-Type': 'application/json'},
         data = json.dumps(self.redflag))
         response = self.app.patch("/api/v1/red-flags/1/location", headers={'Content-Type': 'application/json'},
-        data = json.dumps({"location" : "Kaloleni"}))
+        data = json.dumps({"location" : "85.0, 135.0"}))
         result = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertIn("Successfully updated redflag location",str(result))
@@ -83,17 +83,10 @@ class RedFlagsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200) 
         self.assertIn("Red-flag does not exist",str(result)) 
 
-    def test_wrong_location(self):
-        response = self.app.patch("/api/v1/red-flags/1/location", headers={'content-Type' : 'application/json'}, data=json.dumps({"locationsss" : "Nairobi"}))
-        result = json.loads(response.data)
-        self.assertEqual(response.status_code, 400)
-        self.assertEqual(result['data'], "Keyerror: location for the redflag not updated")
-
     def test_wrong_comment(self):
-        response = self.app.patch("/api/v1/red-flags/1/comment", headers={'content-Type' : 'application/json'}, data=json.dumps({"commentsss" : "Nairobi"}))
+        response = self.app.patch("/api/v1/red-flags/1/comment", headers={'content-Type' : 'application/json'}, data=json.dumps({"comment1" : "POlice acts first"}))
         result = json.loads(response.data)
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(result['data'], "Keyerror: comment for the redflag not updated")
 
 
 

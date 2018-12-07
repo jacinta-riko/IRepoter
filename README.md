@@ -8,25 +8,31 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/2dfe60023dea8cf10443/maintainability)](https://codeclimate.com/github/jacinta-riko/IRepoter/maintainability)
 
-##Prerequisites
-Things yo need to run the appliaction;
+### Postman Link
+https://web.postman.co/collections/5993390-de6397dc-79f8-4189-aee0-e0533b6cce47?workspace=4abfb612-6956-4d69-8369-22cc4e921711
+
+## Heroku link
+https://young-tundra-12508.herokuapp.com/api/v1/red-flags
+
+## Prerequisites
+Things you need to run the appliaction;
 - Requirements
 - Virtual environment
 
 python3 -m env env
 pip intall -r requirements.txt
 
-##installing
+## installing
 Clone my repository;
 
 git clone https://github.com/jacinta-riko/IRepoter
 
 
-##Running the tests
+## Running the tests
 Run this command on terminal:
 pytest
 
-##Endpoints
+## Endpoints
 You can run the urls on postman
 <table>
 <th>Method</th>

@@ -2,17 +2,15 @@
 from flask_restful import Resource
 from flask import jsonify, make_response, request
 from .models import RedFlagModule
-import datetime
-
 
 class RedFlags(Resource):
-    """docstring for RedFlags"""
+    """This is the redflags class which we will use for post or get all redflags methods"""
     
     def __init__(self):
         self.db = RedFlagModule()
 
     def post(self):
-        """method for posting a redflag"""
+        """retun redflag details created by user"""
         
         self.db.save()
         
@@ -26,7 +24,7 @@ class RedFlags(Resource):
         }), 201)
 
     def get(self):
-        """method for getting all redflags"""
+        """return all records created by specific user"""
         self.db.get_all() 
         return make_response(jsonify({
             "status" : 200,
@@ -34,33 +32,33 @@ class RedFlags(Resource):
         }), 200)
 
 class RedFlag(Resource):
-    # """docstring for RedFlag""" add descrptive message
+    """class which will be used to view, delete and edit single redflag by id""" 
     def __init__(self):
         self.db = RedFlagModule()
         
 
     def get(self, redflag_id):
-        """method for getting redflag by id"""
+        """return specific redflag by id"""
         incident = self.db.find(redflag_id)
         if incident == None:
             return make_response(jsonify({
                 "status" : 200,
                 "error" : "Red-flag does not exist"
-            }), 200)
+                }), 200)
         return make_response(jsonify({
-                    "status" : 200,
-                    "data" : incident
+                "status" : 200,
+                "data" : incident
                 }), 200)
     
 
     def delete(self, redflag_id):
-        """method for deleting a single redflag by id"""
+        """delete a single redflag by id"""
         incident = self.db.find(redflag_id)
 
         if incident == None:
             return make_response(jsonify({
                 "status" : 200,
-                "data" : "Red flag does not exist"
+                "data" : "Red-flag record does not exist"
             }), 200)
         delete_status = self.db.delete(incident)
         if delete_status == "deleted":
@@ -73,7 +71,7 @@ class RedFlag(Resource):
             }), 200)  
 
     def put(self, redflag_id):
-        """method for putting redflag"""
+        """returns updated redflag record"""
         incident = self.db.find(redflag_id)
         if incident:
                 incident['createdBy'] = request.json.get('createdBy', incident['createdBy'])
@@ -93,19 +91,20 @@ class RedFlag(Resource):
                 }), 201)
 
 class UpdateLocation(Resource):
-    """Docstring for update location of a redflag"""
+    """class that will be used to update location"""
     def __init__(self):
         self.db = RedFlagModule()
 
 
     def patch(self, redflag_id):
-        """method for patching location"""
+        """We need to get a specific redflag record by id before the user can edit"""
+        
         incident = self.db.find(redflag_id)
 
         if incident == None:
             return make_response(jsonify({
                 "status" : 200,
-                "error" : "Red-flag does not exist"
+                "error" : "Successfully updated redflag location"
             }), 200)
         edit_status = self.db.edit_redflag_location(incident)
         if edit_status == "keyerror":
@@ -123,19 +122,19 @@ class UpdateLocation(Resource):
             }), 200)
 
 class UpdateComment(Resource):
-    """Docstring for update location of a redflag"""
+    """this class will be used to patch a comment"""
     def __init__(self):
         self.db = RedFlagModule()
 
 
     def patch(self, redflag_id):
-        """method for patching location"""
+        """"method for editing a red flag by id"""
         incident = self.db.find(redflag_id)
 
         if incident == None:
             return make_response(jsonify({
                 "status" : 200,
-                "error" : "Red-flag does not exist"
+                "error" : "Red flag does not exist"
             }), 200)
         edit_status = self.db.edit_redflag_comment(incident)
         if edit_status == "keyerror":
